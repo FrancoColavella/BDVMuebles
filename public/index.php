@@ -1,8 +1,10 @@
-<?php require("header.php"); ?>
+<?php require('../api/includes/header.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
     <style>
     body{
         background: url('fondo.png') no-repeat fixed center;
@@ -30,7 +32,7 @@
 <?php
     
     
-    require("conexion.php");
+    require("../api/conexion.php");
     if(isset($_GET['retorno'])&& $_GET['retorno']==1){
         echo "<div class='alert alert-success'>¡Producto agregado exitosamente!</div>";
     }
@@ -54,7 +56,7 @@
                         ?>
                         <div class="carousel-item <?php echo $active;?>">
                             <div class="card" style="width: 34rem;background:#121212;color:white">
-                                <a href="producto.php?idproducto=<?php echo $r['idproducto'];?>"><img src="ImagenesOriginales/<?php echo $r['imagen'];?>" class="card-img-top"></a>
+                                <a href="../api/producto.php?idproducto=<?php echo $r['idproducto'];?>"><img src="../public/ImagenesOriginales/<?php echo $r['imagen'];?>" class="card-img-top"></a>
                                 <div class="card" style="width: 35rem;background:#121212;color:white;padding-top:10px;">
                                    <!--<div style="padding-top:25px;">-->
                                        <a title="más informacion" style="float:right;margin-right:25px;border-radius:30px" class="btn btn-dark card-text" href="#" data-toggle="modal" data-target="#info<?php echo $r['idproducto'];?>" onclick="vistos(<?php echo $r['idproducto']?>);"><i class="fas fa-info-circle">Mas Información</i></a>
@@ -72,7 +74,7 @@
                                     <div class="modal-body" style="background:#121212;color:white">
 		                                <div class="row">
 		                                    <div class="col-md-6">
-		                                        <img src="ImagenesOriginales/<?php echo $r['imagen'];?>" style="width:100%"><br>
+		                                        <img src="../public/ImagenesOriginales/<?php echo $r['imagen'];?>" style="width:100%"><br>
 		                                    </div>
 		                                    <div class="col-md-6">
 		                                        <h6 style="padding-top:20px"><strong>Nombre: </strong><?php echo $r['nombre'];?></h6>
@@ -115,7 +117,7 @@
                         <?php while ($r=mysqli_fetch_array($consulta)) { ?>
                             <div style="padding:2%;color:grey">
                                 <p style="margin-right:20px">
-	                                <a href="#" style="text-decoration:none;color:white" data-toggle="modal" data-target="#info<?php echo $r['idproducto'];?>" onclick="vistos(<?php echo $r['idproducto']?>);"><img src="imagenes/<?php echo $r['imagen'];?>" style="width:30%" align="left">
+	                                <a href="#" style="text-decoration:none;color:white" data-toggle="modal" data-target="#info<?php echo $r['idproducto'];?>" onclick="vistos(<?php echo $r['idproducto']?>);"><img src="../public/ImagenesOriginales/<?php echo $r['imagen'];?>" style="width:30%" align="left">
                                     <h4><?php echo $r['nombre'];?></h4></a>
                                     <?php echo $r['descripcion'];?>
                                 </p>
@@ -127,6 +129,6 @@
             </div>
         </div>
     </div>
-    <?php require("footer.php"); ?>
+    <?php require("../api/includes/footer.php"); ?>
 </body>
 </html>

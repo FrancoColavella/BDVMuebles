@@ -1,6 +1,6 @@
 <?php
 
-require("conexion.php");
+require_once(__DIR__ . '/../conexion.php');
 
 $id_usuario = 0;
 $nombre_usuario = "";
@@ -19,8 +19,8 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
     <title>Inicio BDVMUEBLES</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/estilos.css">
     <style>
         .row {
             padding: 0px;
@@ -96,10 +96,10 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
     <div class="row">
         <div class="col-md-12" style="background:#121212">
             <div class="row contBackHeader">
-                <div class="col-md-3" style="padding-top:15px"><a class="navbar-brand" href="index.php"><img src="logo2.png" style="width:200px;height: 70px;border-radius: 50px"></a>
+                <div class="col-md-3" style="padding-top:15px"><a class="navbar-brand" href="../public/index.php"><img src="../public/logo2.png" style="width:200px;height: 70px;border-radius: 50px"></a>
                 </div>
                 <div class="col-md-5" style="padding-top:35px;">
-                    <form action="buscador.php?pagina=1" method="POST">
+                    <form action="../api/buscador.php?pagina=1" method="POST">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <select style="width:160px;background:black;color:white" class="form-control" id="selectTipo" name="genero">
@@ -137,9 +137,9 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
                                                    
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <!--<form method="POST" action="listarpeliculas.php">-->
-                                                            <a href="listarproductos.php?pagina=1&est=1" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item"><i class='fa fa-list-alt'></i> Listado Productos</a>
+                                                            <a href="../api/listarproductos.php?pagina=1&est=1" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item"><i class='fa fa-list-alt'></i> Listado Productos</a>
                                                         <!--</form>-->
-                                            <form action="logout.php" method="POST">
+                                            <form action="../api/logout.php" method="POST">
                                                 <button type="submit" onMouseover="this.style.background='#B7B7B7'" onMouseout="this.style.background='white'" class="dropdown-item" name="borrar"><i class='fa fa-sign-out'></i> Cerrar Sesión</button>
                                             </form>
                                         </div>
@@ -152,21 +152,21 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
                 <div class="col-md-2" style="background:#121212">
                     <div id="header">
 			            <ul class="nav">
-				            <li><a href="index.php"><i class="fas fa-stream"></i></a>
+				            <li><a href="../public/index.php"><i class="fas fa-stream"></i></a>
 					            <ul>
-						            <li><a href="categorias.php">Productos</a>
+						            <li><a href="../api/categorias.php">Productos</a>
                                         <ul>
                                         <?php 
                                             $select=mysqli_query($conexion,"SELECT * FROM categoria");
                                             while($r=mysqli_fetch_array($select)){
                                         ?>
-						                    <li><a href="productos.php?genero=<?php echo $r['nombrecategoria'];?>"><?php echo $r['nombrecategoria'];?></a></li>
+						                    <li><a href="../api/productos.php?genero=<?php echo $r['nombrecategoria'];?>"><?php echo $r['nombrecategoria'];?></a></li>
                                             <?php }?>
                                         </ul>
                                     </li>
-						            <li><a href="Conocenos.php">Un poco de nosotros</a></li>
-                                    <li><a href="Comprar.php">Como comprar</a></li>
-                                    <li><a href="Pfrecuentes.php">Preguntas frecuentes</a></li>
+						            <li><a href="../api/Conocenos.php">Un poco de nosotros</a></li>
+                                    <li><a href="../api/Comprar.php">Como comprar</a></li>
+                                    <li><a href="../api/Pfrecuentes.php">Preguntas frecuentes</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -227,8 +227,8 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
         </div>
     </div>
 
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../public/Js/jquery.min.js"></script>
+    <script src="../public/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/2be8605e79.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>

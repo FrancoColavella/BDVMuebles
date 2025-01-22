@@ -24,7 +24,7 @@
                 }
         
             }
-            require("header.php");
+            require("includes/header.php");
             $consulta = mysqli_query($conexion, "SELECT * FROM producto where (categorias like '%$productos%') AND idestado=1");
             $productos_x_pag = 4;
             $total_productos = mysqli_num_rows($consulta);
@@ -68,7 +68,7 @@
                while ($r = mysqli_fetch_array($consulta2)) { ?>
                     <div align="center" class="col-md-3" style="padding:1%;">    
                           <div class="card" style="width: 12.5rem;background:#212121;color:white">
-                              <a href="producto.php?idproducto=<?php echo $r['idproducto'];?>"><img src="ImagenesOriginales/<?php echo $r['imagen']; ?>" class="card-img-top"></a>
+                              <a href="producto.php?idproducto=<?php echo $r['idproducto'];?>"><img src="../public/ImagenesOriginales/<?php echo $r['imagen']; ?>" class="card-img-top"></a>
                               <p><?php echo "<i class='fas fa-star'></i>" . $r['material']; ?></p>
                               <div class="card-body" style="height:80px">
                                   <p align="center" class="card-text"><?php echo $r['nombre']; ?></p>
@@ -103,7 +103,7 @@
                                     <div class="modal-body" style="background:#121212;color:white">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <img src="ImagenesOriginales/<?php echo $r['imagen']; ?>" style="width:50%"><br>
+                                                <img src="../public/ImagenesOriginales/<?php echo $r['imagen']; ?>" style="width:50%"><br>
                                             </div>
                                             <div class="col-md-6">
 		                                    <h6 style="padding-top:20px"><strong>Nombre: </strong><?php echo $r['nombre'];?></h6>
@@ -177,6 +177,6 @@
                             }
                         } 
                     </script>
-                    <?php require("footer.php"); ?>
+                    <?php require("includes/footer.php"); ?>
     </body>
 </html>

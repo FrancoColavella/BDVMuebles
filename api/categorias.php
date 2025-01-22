@@ -15,7 +15,7 @@
 </head>
 <body>
    <?php 
-      require("header.php");
+      require("includes/header.php");
       require("conexion.php");   
 
    ?>
@@ -34,12 +34,12 @@
          ?>     
          <div class="col-md-4" align="center" style="padding:20px;">
                   <h4><strong style="color:black;font-family:Latin Modern Roman;font-style: oblique;"><?php echo $r['nombrecategoria'];?></strong></h4>
-                  <a href="productos.php?genero=<?php echo $r['nombrecategoria'];?>"><img src="categorias/<?php echo $r['imagen'];?>" style="width:60%;border-radius:20px"></a>
+                  <a href="productos.php?genero=<?php echo $r['nombrecategoria'];?>"><img src="../Categorias/<?php echo $r['imagen'];?>" style="width:60%;border-radius:20px"></a>
                 </div>
          <?php }?>
        </div>
    </div>
-   <?php require("footer.php"); ?>
+   <?php require("includes/footer.php"); ?>
  </body>
 </html>
 

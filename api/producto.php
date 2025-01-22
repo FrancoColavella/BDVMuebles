@@ -101,7 +101,7 @@
         if (isset($_GET['idproducto'])) {
             $idproducto = $_GET['idproducto'];
         }
-        require("header.php");
+        require("includes/header.php");
         $consulta = mysqli_query($conexion, "SELECT * FROM producto where idproducto=$idproducto");
         $consulta2 = mysqli_query($conexion, "SELECT * FROM imagenes where idproducto=$idproducto and nombreimagen !='.'");
         $imageCount = mysqli_num_rows($consulta2);
@@ -125,7 +125,7 @@
                             while ($ri=mysqli_fetch_array($consulta2)) {
                         ?>
                         <div class="carousel-item <?php echo $active; ?>">
-                            <img src="ImagenesOriginales/<?php echo $ri['nombreimagen']; ?>" class="card-img-top">
+                            <img src="../public/ImagenesOriginales/<?php echo $ri['nombreimagen']; ?>" class="card-img-top">
                         </div>
                         <?php 
                             $active = "";
@@ -165,6 +165,6 @@
             </div>
         </div>
     </div>
-    <?php require("footer.php"); ?>
+    <?php require("includes/footer.php"); ?>
 </body>
 </html>

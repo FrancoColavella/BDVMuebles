@@ -12,11 +12,11 @@
             <div class="col-md-4 mb-4">
                 <h5 class="mb-3" style="color: #f7f7f7;">Enlaces Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a href="index.php" style="color: #a9a9a9; text-decoration: none;">Inicio</a></li>
-                    <li><a href="conocenos.php" style="color: #a9a9a9; text-decoration: none;">Un poco de nosotros</a></li>
-                    <li><a href="productos.php" style="color: #a9a9a9; text-decoration: none;">Productos</a></li>
-                    <li><a href="pfrecuentes.php" style="color: #a9a9a9; text-decoration: none;">Preguntas frecuentes</a></li>
-                    <li><a href="comprar.php" style="color: #a9a9a9; text-decoration: none;">Como Comprar</a></li>
+                    <li><a href="../../public/index.php" style="color: #a9a9a9; text-decoration: none;">Inicio</a></li>
+                    <li><a href="../api/conocenos.php" style="color: #a9a9a9; text-decoration: none;">Un poco de nosotros</a></li>
+                    <li><a href="../api/productos.php" style="color: #a9a9a9; text-decoration: none;">Productos</a></li>
+                    <li><a href="../api/pfrecuentes.php" style="color: #a9a9a9; text-decoration: none;">Preguntas frecuentes</a></li>
+                    <li><a href="../api/comprar.php" style="color: #a9a9a9; text-decoration: none;">Como Comprar</a></li>
                 </ul>
             </div>
             <!-- Columna 3: Redes sociales -->

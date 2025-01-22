@@ -5,7 +5,7 @@
     <title><?php if (isset($_POST['nombre'])) { echo "Modificar Producto";}else{echo "Alta Producto";}?></title> 
    </head>
    <body>
-   <?php require ("header.php");
+   <?php require ("includes/header.php");
    require ("conexion.php");
   ?>
     <div class="container" style="padding-top:40px;">
@@ -51,12 +51,8 @@
                              <div class="form-group col-md-5">
 								<label>Estado</label>
 								<select name="estado" class="form-control" >
-									
-									<?php $selectEstado=mysqli_query($conexion,"SELECT distinct idestado FROM producto");
-									while($r=mysqli_fetch_array($selectEstado)){?>
-										
-										<option value="<?php echo $r['idestado'];?>" <?php  if($idTipoEstado==$r['idestado']){ echo'selected';}?>><?php echo $r['idestado'];?></option>
-									<?php }?>
+										<option value="1" <?php  if($idTipoEstado==1){ echo'selected';}?>>1</option>
+                                        <option value="2" <?php  if($idTipoEstado==2){ echo'selected';}?>>2</option>
 								</select>
 							</div>
                          </div>
@@ -70,7 +66,7 @@
  					             <input type="file" name="imagen" class="form-control" id="imagen" >
                               </div>
                               <div class="form-group col-md-4">
-                                  <img src="<?php echo "ImagenesOriginales/". $datos_generos["imagen"]; ?>" width =100>
+                                  <img src="<?php echo "../public/ImagenesOriginales/". $datos_generos["imagen"]; ?>" width =100>
                              </div>
                           </div>
                          <p style="color:#fafafa;float:left">Géneros</p><br>
@@ -140,11 +136,8 @@
                             <div class="form-group col-md-5">
 								<label>Estado</label>
 								<select name="estado" class="form-control" >
-									
-									<?php $selectEstado=mysqli_query($conexion,"SELECT distinct idestado FROM producto");
-									while($r=mysqli_fetch_array($selectEstado)){?>
-										<option><?php echo $r['idestado'];?></option>
-									<?php }?>
+										<option>1</option>
+                                        <option>2</option>
 								</select>
 							</div>
                             <div class="form-group col-md-5">

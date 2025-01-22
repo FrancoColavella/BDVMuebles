@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="../public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/estilos.css">
     <title>Un poco de nosotros</title>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <style>
         /* Asegura que el contenido ocupe todo el alto de la pantalla */
         html, body {
@@ -41,7 +40,7 @@
 </head>
 
 <body>
-    <?php require("header.php"); ?>
+    <?php require("includes/header.php"); ?>
 
     <div class="content">
         <div class="container">
@@ -67,7 +66,7 @@
                         </p>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img src="./imagenes/bdvmuebles.jpeg" class="card-img-top" alt="BDV Muebles" style="width: 530px; height: 600px;">
+                        <img src="../public/ImagenesOriginales/bdvmuebles.jpeg" class="card-img-top" alt="BDV Muebles" style="width: 530px; height: 600px;">
                     </div>
                 </div>
             </div>
@@ -77,7 +76,7 @@
     <p>
     <p>
 
-    <?php require("footer.php"); ?>
+    <?php require("includes/footer.php"); ?>
 </body>
 
 </html>

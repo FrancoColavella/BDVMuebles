@@ -9,21 +9,21 @@ if (isset($_POST['ingresar']) && !empty($_POST['ingresar'])) {
 		if ($p['nombre_usuario']==$usuario && $p['contrasenia']==$password) {
 			$_SESSION['login']=$p['idusuario'];
 			$_SESSION['usuario']=$p['nombre_usuario'];
-			header("location:index.php");
+			header("location:../public/index.php");
 		}else{ 
-			header("location:index.php?error=2");
+			header("location:../public/index.php?error=2");
 		}
 	}else{
-		header("location:index.php?error=2");
+		header("location:../public/index.php?error=2");
 	}	
 }
 if (isset($_GET['recuperar'])&& $_GET['recuperar']==1){
 			echo '<script> alert("Se ha enviado un mail a su correo con el link de restablecer contraseña");</script>';
-			header("location:index.php");
+			header("location:../public/index.php");
 		}
 		if (isset($_GET['recuperar'])&& $_GET['recuperar']==2){
 			echo '<script> alert("Problemas");</script>';
-			header("location:index.php");
+			header("location:../public/index.php");
 		}
 		if (isset($_GET['recuperar'])&& $_GET['recuperar']==3){
 			echo '<script> alert("El usuario no existe");</script>';

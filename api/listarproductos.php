@@ -13,9 +13,9 @@
     $asc = 0;
     
     if(!isset($_GET['pagina'])){
-      header("location:listarproductos.php?pagina=1");
+      header("location:../api/listarproductos.php?pagina=1");
       }
-      include "conexion.php";
+      require ("conexion.php");
       $est=$_GET['est'];
   $sql = "SELECT * FROM producto WHERE idestado = $est";
   /*$estados=mysqli_query($conexion,"SELECT distinct idestado FROM producto WHERE idestado=1 OR idestado=2 ORDER BY descripcion ASC");*/
@@ -37,13 +37,12 @@
   $paginas = $total_productos / $productos_x_pag;
   $paginas = ceil($paginas);
   if (isset($_GET['pagina'])) {
-    require("header.php");
+    require("includes/header.php");
     $iniciar = ($_GET['pagina'] - 1) * $productos_x_pag;
     $resultado = mysqli_query($conexion,$sql . " limit $iniciar,$productos_x_pag");
   }
     ?>
     <script language="javascript">
-      
       $(document).ready(function(){
       
         $("#Est").change(function () {	

@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="../public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/estilos.css">
     <title>Preguntas frecuentes</title>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <style>
         footer {
             text-align: center;
@@ -19,7 +18,7 @@
 
 <body>
     <?php
-    require("header.php");
+    require("includes/header.php");
     ?>
     
 
@@ -44,7 +43,7 @@
             </div>
         </div>
     </div>
-    <?php require("footer.php"); ?>
+    <?php require("includes/footer.php"); ?>
 </body>
 
 

@@ -4,7 +4,7 @@ require("conexion.php");
 
 use BenMajor\ImageResize\Image;
 
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 function imagen(){
 	require("conexion.php");
     if (isset($_POST['Modificar'])) {
@@ -42,7 +42,7 @@ function imagen(){
 				$anchoOriginal = imagesx($imagen);
 				$altoOriginal = imagesy($imagen);
 
-				$directorioOriginal = "ImagenesOriginales";
+				$directorioOriginal = "../public/ImagenesOriginales";
 				// Definir el tamaño final de las imágenes (por ejemplo, 400x400)
 				$tamañoFinal = 400;
 		
@@ -117,7 +117,7 @@ function imagen(){
 			$anchoOriginal = imagesx($imagen);
 			$altoOriginal = imagesy($imagen);
 
-			$directorioOriginal = "ImagenesOriginales";
+			$directorioOriginal = "../public/ImagenesOriginales";
 			// Definir el tamaño final de las imágenes (por ejemplo, 400x400)
 			$tamañoFinal = 400;
 		
@@ -245,7 +245,7 @@ function imagen(){
 		}
 		
 		// Definir la ruta de la carpeta de imágenes originales
-		$directorioOriginal = "ImagenesOriginales";
+		$directorioOriginal = "../public/ImagenesOriginales";
 		// Definir el tamaño final de las imágenes (por ejemplo, 400x400)
 		$tamañoFinal = 400;
 		
